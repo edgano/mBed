@@ -1,7 +1,14 @@
 languaje: bash
+os:
+  - linux
+
+compiler:
+  - gcc
+  
 addons:
   apt:
     sources: [ 'ubuntu-toolchain-r-test']
     packages: ['libstdc++6']
+
 script: 
   - ./mBedSeedMap.sh ./tutorial/seatoxin.fa ./tutorial/seatoxin.ref
