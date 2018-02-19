@@ -11,7 +11,6 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends \
                 ed \
                 less \
-                vim-tiny \
                 wget \
                 git \
                 python \
@@ -23,11 +22,17 @@ RUN apt-get update \
                 libpng12-0 \
                 python-biopython \
                 python-numpy \
-                ruby \
                 python-setuptools \
                 default-jdk \
                 libpng-dev \
                 vim
                 
-## download hacked mBed
+## download the repo
 RUN wget https://github.com/edgano/mBed mBed_hack
+
+##compile SeqFile
+RUN cd mBed_hack/SeqFilter && make
+
+##compile mBed
+RUN cd mBed_hack/mBed && make
+
