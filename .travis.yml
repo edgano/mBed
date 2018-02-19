@@ -8,8 +8,10 @@ compiler:
   
 addons:
   apt:
-    sources: [ 'ubuntu-toolchain-r-test']
-    packages: ['libstdc++6']
-
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - libstdc++-4.9-dev
+      
 script: 
   - ./mBedSeedMap.sh ./tutorial/seatoxin.fa ./tutorial/seatoxin.ref
