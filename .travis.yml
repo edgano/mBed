@@ -12,6 +12,11 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - libstdc++6
-      
+before_isntall:
+  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+  - sudo apt-get update
+  - sudo apt-get upgrade
+  - sudo apt-get dist-upgrade
+  
 script: 
   - ./mBedSeedMap.sh ./tutorial/seatoxin.fa ./tutorial/seatoxin.ref
