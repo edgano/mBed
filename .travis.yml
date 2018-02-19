@@ -1,4 +1,5 @@
 languaje: bash
+dist: trusty
 os:
   - linux
 
